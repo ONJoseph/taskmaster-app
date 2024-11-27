@@ -1,0 +1,38 @@
+# Node.js dependencies
+/node_modules/
+
+# .env files for sensitive environment variables
+.env
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE or editor folders and files
+.vscode/
+.idea/
+
+# Operating system files
+*.swp
+*~
+*.bak
+
+# Build and output directories
+/dist/
+build/
+
+# Test and coverage directories
+/coverage/
+
+# Generated files (optional, depending on your project)
+*.tgz
+*.zip
+*.tar.gz
+
+# TaskMaster-specific
+/.cache/

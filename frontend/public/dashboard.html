@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | TaskMaster</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">TASKMASTER</h1>
+      <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./login.html">Login</a>
+        <a href="./register.html">Register</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>  
+  <main class="container">
+    <section>
+      <h1>Task Dashboard</h1>
+      <div class="controls">
+        <input type="text" id="search" placeholder="Search tasks..." />
+        <select id="filter-status">
+          <option value="">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        <button id="new-task">New Task</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="task-list">
+          <!-- Tasks will be populated dynamically -->
+        </tbody>
+      </table>
+      <div id="pagination">
+        <!-- Pagination buttons will go here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for Task Creation/Editing -->
+  <div id="task-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 id="modal-title">Create Task</h2>
+      <form id="task-form">
+        <input type="hidden" id="task-id" />
+        <label for="title">Title:</label>
+        <input type="text" id="title" required />
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button type="submit">Save Task</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© TaskMaster by Joseph Ogbole - 3MTT Capstone Project</p>
+  </footer>
+  <script type="module" src="./scripts/dashboard.js"></script>
+</body>
+</html>

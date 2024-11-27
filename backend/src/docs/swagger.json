@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "TaskMaster API",
+      "description": "API documentation for the TaskMaster app"
+    },
+    "host": "localhost:5000",
+    "basePath": "/api",
+    "schemes": ["http"],
+    "paths": {
+      "/tasks": {
+        "get": {
+          "summary": "Get all tasks",
+          "description": "Retrieve a paginated list of tasks",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "type": "integer",
+              "description": "Page number for pagination"
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "type": "string",
+              "description": "Search term to filter tasks by title"
+            },
+            {
+              "name": "filter",
+              "in": "query",
+              "type": "string",
+              "enum": ["completed", "pending"],
+              "description": "Filter tasks by completion status"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tasks": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Task"
+                    }
+                  },
+                  "pagination": {
+                    "type": "object",
+                    "properties": {
+                      "currentPage": { "type": "integer" },
+                      "totalPages": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Task": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "completed": { "type": "boolean" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+  
