@@ -3,7 +3,7 @@ const { sequelize } = require('./models');
 
 const PORT = process.env.PORT || 5000;
 
-sequelize.sync({ force: false }) // Adjust `force` based on your needs
+sequelize.sync({ force: true }) // Set to false in production
   .then(() => {
     console.log('Database connected!');
     app.listen(PORT, () => {
