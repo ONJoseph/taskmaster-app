@@ -351,3 +351,46 @@ footer p {
 .text-right {
   text-align: right;
 }
+
+/* General styling for loading indicators and error messages */
+.hidden {
+  display: none;
+}
+
+#loading-indicator {
+  text-align: center;
+  font-size: 1.2em;
+  color: #007BFF;
+  margin-top: 20px;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+/* Styling for tasks */
+#task-container .task {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#load-more {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#load-more:hover {
+  background-color: #0056b3;
+}

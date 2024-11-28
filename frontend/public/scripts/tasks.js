@@ -26,9 +26,10 @@ export async function addTask(task) {
       },
       body: JSON.stringify(task),
     });
-    return response.ok;
+    if (!response.ok) throw new Error('Failed to add task');
+    return true;
   } catch (error) {
     console.error('Error adding task:', error);
-    throw error;
+    return false;
   }
 }
